@@ -7,7 +7,7 @@ import Sewa from "./sewa";
 import FAQ from "./faq";
 import Footer from "./footer";
 
-const landingPages = () => {
+const LandingPages = () => {
   return (
     <>
       <Navbar />
@@ -22,4 +22,4 @@ const landingPages = () => {
   );
 };
 
-export default landingPages;
+export default LandingPages;
