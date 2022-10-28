@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="masthead text-dark " style="background-color: #f1f3ff">
+    <header className="masthead text-dark " style={{ backgroundColor: "#f1f3ff" }}>
       <div className="container">
         <br />
         <br />
@@ -11,7 +11,7 @@ const Header = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum hic ducimus minus ullam beatae cupiditate ex distinctio repellendus atque dolorum debitis reiciendis, suscipit necessitatibus voluptate itaque nihil eveniet
               tenetur quidem!
             </p>
-            <a className="btn btn-success" href="/cars">
+            <a className="btn btn-success" href="http://localhost:8000/cars">
               Mulai Sewa Mobil
             </a>
           </div>

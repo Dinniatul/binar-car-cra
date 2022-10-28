@@ -1,26 +1,72 @@
-// const express = require("express");
-// const path = require("path");
+// const http = require('http');
+// const { PORT = 8000 } = process.env;
 
-// const app = express();
+// const fs = require('fs');
+// const path = require('path');
+// const PUBLIC_DIRECTORY = path.join(process.cwd(),'public');
 
-// app.use(express.static("public"));
+// function getHTML(htmlFileName) {
+//     const htmlFilePath = path.join(PUBLIC_DIRECTORY, htmlFileName);
+//     return fs.readFileSync(htmlFilePath, 'utf-8')
+// }
 
-// // routing
+// function onRequest(req, res) {
 
-// app.get("/", function (req, res) {
-//   res.sendFile(path.join(__dirname, "/index.html"));
+//     switch (req.url) {
+//         case "/":
+//             res.writeHead(200)
+//             res.url('index.html')
+//             return;
+//         case "/search":
+//             res.writeHead(200)
+//             res.url('index.example.html')
+//             return;
+//         default:
+//             res.writeHead(404)
+//             res.end(getHTML("404.html"))
+//             return;
+//     }
+
+//     let path = "public/" + req.url;
+//     fs.readFile(path, (err, data) => {
+//       res.writeHead(200);
+//       res.end(data);
+//     })
+
+// }
+
+// const server = http.createServer(onRequest);
+
+// server.listen(PORT, 'localhost', () => {
+//     console.log("Server Sudah Berjalan");
 // });
 
-// app.get("/cars", function (req, res) {
-//   res.sendFile(path.join(__dirname, "../public/cariMobil.html"));
-// });
+////////////////////////////
+const http = require("http");
+const fs = require("fs");
 
-// app.use(express.static(__dirname + "/public"));
+const port = 8000;
 
-// app.listen(8000, "0.0.0.0", () => {
-//   console.log("Server sudah berjalan, silahkan buka http://0.0.0.0:%d", 8000);
-// });
+function onRequest(req, res) {
+  switch (req.url) {
+    case "/":
+      res.writeHead(200);
+      req.url = "index.html";
+      break;
+    case "/search":
+      res.writeHead(200);
+      req.url = "index.example.html";
+      break;
+  }
 
-// app.get("*", function (req, res) {
-//   res.send("Halaman Tidak ditemukan!", 404);
-// });
+  let path = "public/" + req.url;
+  fs.readFile(path, (err, data) => {
+    res.writeHead(200);
+    res.end(data);
+  });
+}
+const server = http.createServer(onRequest);
+
+server.listen(port, "localhost", () => {
+  console.log("Server Sudah Berjalan");
+});
