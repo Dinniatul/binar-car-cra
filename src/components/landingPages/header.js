@@ -11,7 +11,7 @@ const Header = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum hic ducimus minus ullam beatae cupiditate ex distinctio repellendus atque dolorum debitis reiciendis, suscipit necessitatibus voluptate itaque nihil eveniet
               tenetur quidem!
             </p>
-            <a className="btn btn-success" href="http://localhost:8000/cars">
+            <a className="btn btn-success" href="/search">
               Mulai Sewa Mobil
             </a>
           </div>
