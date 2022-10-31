@@ -70,9 +70,6 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="container mt-5 col-md-9">
-        <div id="cars-container" className="row row-cols-lg-3 row-cols-sm-2 row-cols-1 g-3"></div>
-      </div>
     </>
   );
 };
