@@ -1,12 +1,14 @@
 import Navbar from "./navbar";
-import Content from "./content";
+import Header from "./header";
+import Car from "./car";
 import Footer from "./footer";
 
 const CariMobil = () => {
   return (
     <>
       <Navbar />
-      <Content />
+      <Header />
+      <Car />
       <Footer />
     </>
   );

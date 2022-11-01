@@ -11,7 +11,7 @@ const WhyUs = () => {
         <div className="row">
           <div className="col-md-3 mt-3">
             <div className="card">
-              <div className="card-body">
+              <div className="card-body" style={{ minHeight: "15rem" }}>
                 <blockquote className="blockquote mb-0">
                   <img className="img" src="images/icon_complete.jpg" />
                   <h5 className="mt-3">Mobil Lengkap</h5>
@@ -22,7 +22,7 @@ const WhyUs = () => {
           </div>
           <div className="col-md-3 mt-3">
             <div className="card">
-              <div className="card-body">
+              <div className="card-body" style={{ minHeight: "15rem" }}>
                 <blockquote className="blockquote mb-0">
                   <img className="img" src="images/icon_price.jpg" />
                   <h5 className="mt-3">Harga Murah</h5>
@@ -33,7 +33,7 @@ const WhyUs = () => {
           </div>
           <div className="col-md-3 mt-3">
             <div className="card">
-              <div className="card-body">
+              <div className="card-body" style={{ minHeight: "15rem" }}>
                 <blockquote className="blockquote mb-0">
                   <img src="images/icon_24hrs.jpg" />
                   <h5 className="mt-3">Layanan 24 Jam</h5>
@@ -44,7 +44,7 @@ const WhyUs = () => {
           </div>
           <div className="col-md-3 mt-3">
             <div className="card">
-              <div className="card-body" style={{ maxHeight: "250%" }}>
+              <div className="card-body" style={{ minHeight: "15rem" }}>
                 <blockquote className="blockquote mb-0">
                   <img src="images/icon_professional.jpg" />
                   <h5 className="mt-3">Sopir Profesional</h5>
