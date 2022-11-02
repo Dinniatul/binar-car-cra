@@ -47,6 +47,11 @@ p.testimonial-name {
   border-radius: 50%;
 }
 
+.img-card {
+  height: 170px;
+  object-fit: cover;
+}
+
 @media screen and (max-width: 780px) {
   .hero-desc.container-md {
     padding-top: 40px;
@@ -210,13 +215,13 @@ p.testimonial-name {
   line-height: 18px;
 }
 
-.card-body {
+/* .card-body {
   background: #ffffff;
   font-family: "Rubik";
   font-style: normal;
   color: black;
   min-height: 34rem;
-}
+} */
 
 .button-global {
   background: #5cb85f;

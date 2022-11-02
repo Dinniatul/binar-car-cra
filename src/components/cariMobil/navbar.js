@@ -2,7 +2,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg ">
       <div className="container">
-        <img className="img-fluid" src="images/logo.png" style={{ width: "100px" }} />
+        <a href="/">
+          <img className="img-fluid" src="images/logo.png" style={{ width: "100px" }} />
+        </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>

@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 
 const Car = () => {
   const [carData, setCarData] = useState([]);
+  const [displayCar, setDisplayCars] = useState([]);
+  //const [populateCars, setPopulateCars] = useState([]);
+  const [driverType, setDriverType] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [capacity, setCapacity] = useState("");
 
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json")
@@ -15,6 +21,72 @@ const Car = () => {
       });
   }, []);
 
+  // //membuat variabel baru menggabungkan waktu dan tanggal
+  // const newDateTime = new Date(`${date} ${time}`);
+  // const epochTime = newDateTime.getTime();
+
+  // class Binar {
+  //   static populateCars = (cars) => {
+  //     return cars.map((car) => {
+  //       const isPositive = getRandomInt(0, 1) === 1;
+  //       const timeAt = new Date();
+  //       const mutator = getRandomInt(1000000, 100000000);
+  //       const availableAt = new Date(timeAt.getTime() + (isPositive ? mutator : -1 * mutator));
+
+  //       return {
+  //         ...car,
+  //         availableAt,
+  //       };
+  //     });
+  //   };
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // function populateCars() {
+  //   {
+  //     carData.map((item) => {
+  //       const isPositive = getRandomInt(0, 1) === 1;
+  //       const timeAt = new Date();
+  //       const mutator = getRandomInt(1000000, 100000000);
+  //       const availableAt = new Date(timeAt.getTime() + (isPositive ? mutator : -1 * mutator));
+
+  //       return {
+  //         ...item,
+  //         availableAt,
+  //       };
+  //     });
+  //   }
+  // }
+
+  function populateCars() {
+    displayCar.map((item) => {
+      const isPositive = getRandomInt(0, 1) === 1;
+      const timeAt = new Date();
+      const mutator = getRandomInt(1000000, 100000000);
+      const availableAt = new Date(timeAt.getTime() + (isPositive ? mutator : -1 * mutator));
+
+      //setPopulateCars(populateCars);
+      return {
+        ...item,
+        availableAt,
+      };
+    });
+  }
+
+  const handleSearchCar = () => {
+    console.log(driverType, date, time, capacity, populateCars);
+
+    const filteredCars = populateCars.filter((item) => (item.available === true) && (item.capacity >= setCapacity) && (item.availableAt >= setDate));
+
+    console.log("filteredCars", filteredCars);
+
+    setDisplayCars(filteredCars);
+  };
+
   return (
     <div>
       <section id="search">
@@ -23,7 +95,7 @@ const Car = () => {
             <div className="d-lg-flex py-3 rounded-3 shadow bg-white">
               <div className="col">
                 <label className="label">Tipe Driver</label>
-                <select className="form-style">
+                <select className="form-style" value={driverType} onChange={(e) => setDriverType(e.target.value)}>
                   <option hidden className="tipe-driver">
                     Pilih Tipe Driver
                   </option>
@@ -34,35 +106,35 @@ const Car = () => {
               <div className="col ">
                 <label className="label">Tanggal</label>
                 <div className="input-group">
-                  <input type="date" className="form-style" placeholder="Pilih Tanggal" id="input-tanggal" />
+                  <input type="date" value={date} className="form-style" placeholder="Pilih Tanggal" id="input-tanggal" onChange={(e) => setDate(e.target.value)} />
                 </div>
               </div>
               <div className="col ">
                 <label className="label">Waktu Jemput/Ambil</label>
-                <input type="time" className="form-style" id="input-waktu" />
+                <input type="time" value={time} className="form-style" id="input-waktu" onChange={(e) => setTime(e.target.value)} />
               </div>
               <div className="col ">
                 <label className="label">Jumlah Penumpang/Opsional</label>
-                <input type="person" className="form-style" placeholder="Jumlah Penumpang" id="input-penumpang" />
+                <input type="person" value={capacity} className="form-style" placeholder="Jumlah Penumpang" id="input-penumpang" onChange={(e) => setCapacity(e.target.value)} />
                 <span className="icon">
                   <i className="bi bi-people"></i>
                 </span>
               </div>
               <div>
                 <div className="col">
-                  <button type="button" style={{ height: " 5" }} className="btn btn-success my-4 " id="cari-btn">
+                  <button type="button" style={{ height: " 5" }} className="btn btn-success my-4 " id="cari-btn" onClick={handleSearchCar}>
                     {" "}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
-                    Cari{" "}
+                    Cari
                   </button>
-                  <button type="button" className="btn btn-success my-4  " id="hapus-btn">
+                  {/* <button type="button" className="btn btn-success my-4  " id="hapus-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash-fill" viewBox="0 0 16 16">
                       <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
                     </svg>
                     Hapus{" "}
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -71,12 +143,15 @@ const Car = () => {
       </section>
 
       <div className=" container row mt-5 mx-auto ">
-        {carData.map((item) => (
-          <div className="col-lg-4 d-flex mt-5">
-            <div className="card  width=100px ">
+        {displayCar.map((item) => (
+          <div key={item.id} className="col-lg-4 d-flex mt-5">
+            <div className="card ">
               <div className="card-body">
                 <div className="image-card ">
-                  <img src={item.image} className="w-100" alt="" />
+                  <center>
+                    {" "}
+                    <img src={item.image} className="img-card" />
+                  </center>
                 </div>
                 <p className="mt-4">
                   {item.manufacture}/{item.type}
@@ -108,9 +183,9 @@ const Car = () => {
                   </svg>{" "}
                   Tahun {item.year}
                 </p>
-                <a href="#" className="btn btn-success text-white w-100 mt-2 fw-bold mt-4 " style={{ fontSize: "14px" }}>
+                <button href="#" className="btn btn-success text-white w-100 mt-2 fw-bold mt-4 " style={{ fontSize: "14px" }}>
                   Pilih Mobil
-                </a>
+                </button>
               </div>
             </div>
           </div>
