@@ -226,3 +226,13 @@ p.testimonial-name {
 .button-global {
   background: #5cb85f;
 }
+
+#pilihMobil {
+  padding-top: 1rem;
+}
+
+#description {
+  height: 100px;
+  row-gap: inherit;
+  text-align: left;
+}
