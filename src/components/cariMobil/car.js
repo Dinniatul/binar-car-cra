@@ -48,9 +48,6 @@ const Car = () => {
     } else if (!date) {
       alert("Please select date");
       return;
-    } else if (newDateTime < today) {
-      alert("Dont select past time");
-      return;
     }
 
     const filterCars = populateCars.filter((item) => item.capacity >= capacity && item.availableAt >= newDateTime);
