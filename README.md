@@ -1,77 +1,25 @@
 # Binar Car Cra 
 
-Binar Car Cra is a web-based information system using REACT APP
+Binar Car Cra is a web-based information system. In this information system, there are features in the form of filters. Filters can be run according to their type, including driver type, date, time, and capacity. Using React js and Framework Booststrap
+
+# Routing in Project
+- http://localhost:3000/
+
+![WhatsApp Image 2022-11-04 at 16 06 35](https://user-images.githubusercontent.com/82430279/199934971-6c3cbd2b-ee13-4171-8175-6a851634a7f7.jpeg)
+
+- http://localhost:3000/cars
+
+![WhatsApp Image 2022-11-04 at 16 08 29](https://user-images.githubusercontent.com/82430279/199935271-61d1a556-0576-450a-ad6c-85c2b491b93b.jpeg)
+
+# Filtering Car
+This filter feature works when the passenger capacity is greater than what we input and the time and date entered is greater than the actual time.The data will be displayed 2 or 3 days from the input
+
+![WhatsApp Image 2022-11-04 at 16 17 33](https://user-images.githubusercontent.com/82430279/199937076-76a32e46-fe03-4b23-ba7d-39df8f5f7d3f.jpeg)
 
 
+![WhatsApp Image 2022-11-04 at 16 18 31](https://user-images.githubusercontent.com/82430279/199937238-5ad71a7d-e505-40a2-af97-7c2c49302ed8.jpeg)
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# How to Install
+- Download or clone Repository
+- Install depedencis with `npm install`
+- run project with `npm start`
